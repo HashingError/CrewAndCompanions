@@ -19,12 +19,12 @@ from django.urls import path, include
 from pages.views import home, about, contact, wall, submissions, resources
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),
-    path('about/', about),
-    path('contact/', contact),
-    path('love-letters/', wall),
-    path('submissions/', submissions),
-    path('resources/', resources),
+    path('', home, name='home'),
+    path('about/', about, name='about'),
+    path('contact/', contact, name='contact'),
+    path('love-letters/', wall, name='wall'),
+    path('submissions/', submissions, name='submissions'),
+    path('resources/', resources, name='resources'),
     path("__reload__/", include("django_browser_reload.urls")),
 
 
