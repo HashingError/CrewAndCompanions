@@ -9,13 +9,11 @@
 		{% tailwind_css %}
 	</head>
 
-	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
-		<div class="grid grid-cols-12">
-            <div class="col-span-12">
+	<body class="bg-cc_cream font-serif leading-normal tracking-normal">
+    {% include 'layout/navbar.html' %}
+
                     {% block content %}
                     {% endblock content %}
-            </div>
-        </div>
 
     </body>
 </html>
