@@ -5,10 +5,14 @@
 Love Letters
 
 {% if qs %}
+    <div class="grid gap-4 grid-cols-3 grid-rows-auto">
     {% for obj in qs %}
-    <h4>{{ obj.displayed_name }}</h4>
-        <p>{{ obj.message }}</p>
+        <div class="bg-cc_violet text-white  aspect-square">
+            <div>{{ obj.displayed_name }}</div>
+            <div>{{ obj.message }}</div>
+        </div>
     {% endfor %}
+    </div>
 {% else %}
 Nothing to see here
 {% endif %}
