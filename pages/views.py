@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Letter
 
 # Create your views here.
 def home(request):
@@ -15,7 +15,8 @@ def contact(request):
 
 
 def wall(request):
-    return render(request, 'wall.html')
+    qs = Letter.objects.exclude(publish=False)
+    return render(request, 'wall.html', {'qs': qs})
 
 
 def submissions(request):

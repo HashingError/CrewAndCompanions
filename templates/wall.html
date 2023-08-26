@@ -1,1 +1,10 @@
 Love Letters
+
+{% if qs %}
+    {% for obj in qs %}
+    <h4>{{ obj.displayed_name }}</h4>
+        <p>{{ obj.message }}</p>
+    {% endfor %}
+{% else %}
+Nothing to see here
+{% endif %}
