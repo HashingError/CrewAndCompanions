@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Letter
+from django.views.generic import FormView
+from .forms import LetterForm
 
 # Create your views here.
 def home(request):
@@ -19,9 +21,16 @@ def wall(request):
     return render(request, 'wall.html', {'qs': qs})
 
 
-def submissions(request):
-    return render(request, 'submissions.html')
-
-
 def resources(request):
     return render(request, 'home.html')
+
+
+def submissions(request):
+    if request.method == 'POST':
+        form = LetterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('wall')
+    else:
+        form = LetterForm()
+    return render(request, 'letter_form.html', {'form': form})
