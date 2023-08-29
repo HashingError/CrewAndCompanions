@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'layout/base.html' %}
 
 {% block content %}
 <p>Our favorite video game experiences are made by game devs who pour their heart and soul into what they do; their creative vision and technical minds give us worlds full of adventure, companions to befriend (or romance!), and stories to uncover.
@@ -11,7 +11,8 @@ Show your appreciation for game devs by posting something below. Even a simple "
       Post a Message
     </button>
     <br>
-    <button onclick="window.location.href='{% url 'wall' %}';">
+    <button class="button" onclick="window.location.href='{% url 'wall' %}';">
     View Messages
     </button>
+
 {% endblock content%}

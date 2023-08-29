@@ -25,8 +25,4 @@ urlpatterns = [
     path('love-letters/', wall, name='wall'),
     path('submissions/', submissions, name='submissions'),
     path('resources/', resources, name='resources'),
-    path("__reload__/", include("django_browser_reload.urls")),
-
-
-
 ]
